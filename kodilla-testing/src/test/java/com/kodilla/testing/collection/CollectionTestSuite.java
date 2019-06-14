@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CollectionTestSuite {
 
@@ -13,38 +14,45 @@ public class CollectionTestSuite {
     public void before() {
         System.out.println("Test Case: begin");
     }
+
     @After
     public void after() {
         System.out.println("Test Case: end");
     }
+
     @Test
     public void testOddNumbersExterminatorEmptyList() {
         //Given
         OddNumbersExterminator tester = new OddNumbersExterminator();
-        ArrayList<Integer> emptyList = new ArrayList<>();
+        List<Integer> emptyList = new ArrayList<>();
         //When
-        ArrayList<Integer> result = tester.exterminate(emptyList);
+        List<Integer> result = tester.exterminate(emptyList);
         System.out.println("Testing empty list!");
         //Then
-        Assert.assertEquals(emptyList,result);
+        Assert.assertEquals(emptyList, result);
+        Assert.assertEquals(emptyList.size(), result.size());
     }
+
     @Test
     public void testOddNumbersExterminatorNormalList() {
         //Given
-        ArrayList<Integer> oddPlusEvenList = new ArrayList<>();
-        for (int i = 1; i == 100; i++) {
-            oddPlusEvenList.add(i);
-        }
-        ArrayList<Integer> expected = new ArrayList<>();
-        for (int i = 1; i == 100; i++) {
-            if (i % 2 == 0)
-                expected.add(i);
-        }
+        List<Integer> oddPlusEvenList = new ArrayList<>();
+        oddPlusEvenList.add(1);
+        oddPlusEvenList.add(6);
+        oddPlusEvenList.add(19);
+        oddPlusEvenList.add(7);
+        oddPlusEvenList.add(2);
+
+        List<Integer> expected = new ArrayList<>();
+        expected.add(6);
+        expected.add(2);
+
         //When
         OddNumbersExterminator tester = new OddNumbersExterminator();
-        ArrayList<Integer> result = tester.exterminate(oddPlusEvenList);
+        List<Integer> result = tester.exterminate(oddPlusEvenList);
         System.out.println("Testing list with odd + even Integers");
         //Then
-        Assert.assertEquals(expected,result);
+        Assert.assertEquals(expected, result);
+        Assert.assertEquals(expected.size(), result.size());
     }
 }
