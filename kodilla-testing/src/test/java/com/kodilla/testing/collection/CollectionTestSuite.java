@@ -30,7 +30,6 @@ public class CollectionTestSuite {
         System.out.println("Testing empty list!");
         //Then
         Assert.assertEquals(emptyList, result);
-        Assert.assertEquals(emptyList.size(), result.size());
     }
 
     @Test
@@ -53,6 +52,5 @@ public class CollectionTestSuite {
         System.out.println("Testing list with odd + even Integers");
         //Then
         Assert.assertEquals(expected, result);
-        Assert.assertEquals(expected.size(), result.size());
     }
 }
