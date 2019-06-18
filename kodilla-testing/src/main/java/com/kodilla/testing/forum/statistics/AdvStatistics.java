@@ -43,19 +43,19 @@ public class AdvStatistics {
         if (statistics.usersNames().size() == 0) {
             avPostsPerUser = 0.0;
         } else {
-            avPostsPerUser = (double)statistics.postsCount() / (double)statistics.usersNames().size();
+            avPostsPerUser = (double)statistics.postsCount() / statistics.usersNames().size();
         }
 
         if (statistics.usersNames().size() == 0) {
             avCommentsPerUser = 0.0;
         } else {
-            avCommentsPerUser = (double)statistics.commentsCount() / (double)statistics.usersNames().size();
+            avCommentsPerUser = (double)statistics.commentsCount() / statistics.usersNames().size();
         }
 
         if (statistics.postsCount() == 0) {
             avCommentsPerPost = 0.0;
         } else {
-            avCommentsPerPost = (double)statistics.commentsCount() / (double)statistics.postsCount();
+            avCommentsPerPost = (double)statistics.commentsCount() / statistics.postsCount();
         }
     }
 
