@@ -38,14 +38,16 @@ public final class ForumUser {
         return numberOfPosts;
     }
 
+
+
     @Override
     public String toString() {
-        return "ForumUser{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
-                ", sex=" + sex +
-                ", dateOfBirth=" + dateOfBirth +
-                ", numberOfPosts=" + numberOfPosts +
+        return "ForumUser {" +
+                " userId = " + userId +
+                ", userName = '" + userName + '\'' +
+                ", sex = " + sex +
+                ", dateOfBirth = " + dateOfBirth +
+                ", numberOfPosts = " + numberOfPosts +
                 '}';
     }
 }

@@ -1,7 +1,5 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.book.Book;
-import com.kodilla.stream.book.BookDirectory;
 import com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.forumuser.ForumUser;
 
@@ -14,7 +12,7 @@ public class StreamMain {
         Forum users = new Forum();
         Map<Integer, ForumUser> theMapOfUsers = users.getUserList().stream()
                 .filter(user -> user.getSex() == ('M'))
-                .filter(user -> user.getDateOfBirth().isBefore(LocalDate.of(1999,06,19)))
+                .filter(user -> user.getDateOfBirth().isBefore(LocalDate.now().minusYears(20)))
                 .filter(user -> user.getNumberOfPosts() > 0)
                 .collect(Collectors.toMap(ForumUser::getUserId, user -> user));
 
