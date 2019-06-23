@@ -19,5 +19,7 @@ public class StreamMain {
         theMapOfUsers.entrySet().stream()
                 .forEach(System.out::println);
 
+
+
     }
 }
