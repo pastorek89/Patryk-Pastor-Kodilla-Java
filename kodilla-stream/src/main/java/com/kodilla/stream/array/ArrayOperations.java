@@ -14,6 +14,6 @@ public interface ArrayOperations {
                 .map(i -> numbers[i])
                 .average();
 
-        return average.getAsDouble();
+        return average.orElse(0.0);
     }
 }
