@@ -162,6 +162,6 @@ public class BoardTestSuite {
                 .average().orElse(0.0);
 
         //Then
-        Assert.assertEquals(10.0, averageDaysOfTasksFromBegin, 0);
+        Assert.assertEquals(10.0, averageDaysOfTasksFromBegin, 0.01);
     }
 }
