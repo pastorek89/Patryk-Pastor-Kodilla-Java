@@ -12,7 +12,7 @@ public class FirstChallenge {
     public static void main(String[] args) {
 
         FirstChallenge firstChallenge = new FirstChallenge();
-        try { double result = firstChallenge.divide(3, 0);
+        try { double result = firstChallenge.divide(3, 2);
               System.out.println(result);
         } catch (ArithmeticException e) {
             System.out.println("Divided by 0");
