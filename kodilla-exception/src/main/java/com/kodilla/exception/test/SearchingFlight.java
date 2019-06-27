@@ -11,7 +11,7 @@ public class SearchingFlight {
        Map<String,Boolean> airports = airportsData.addAirports();
 
        //Searching Route
-        if(airports.containsKey(flight.getArrivedAirport())) {
+        if(airports.containsKey(flight.getArrivedAirport()) && airports.containsKey(flight.getDepartureAirport())) {
             boolean result = airports.get(flight.getArrivedAirport());
                 if(result) {
                 System.out.println("Flight from " + flight.getDepartureAirport() + " to " + flight.getArrivedAirport() + " is available");
