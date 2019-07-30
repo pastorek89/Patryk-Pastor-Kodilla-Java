@@ -2,7 +2,7 @@ package com.kodilla.exception.test;
 
 public class FindFlightRunner {
     public static void main(String[] args) {
-        Flight flight = new Flight("Wasd","Amsterdam");
+        Flight flight = new Flight("Warsaw","Wasdadw");
         SearchingFlight searchingFlight = new SearchingFlight();
         try {
             searchingFlight.findFlight(flight);
