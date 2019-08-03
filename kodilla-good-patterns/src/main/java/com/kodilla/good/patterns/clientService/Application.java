@@ -9,7 +9,7 @@ public class Application {
         OrderService orderService = new OrderService(new HealthyShop(),new MailService());
         orderService.order(orderRequest);
         System.out.println();
-        OrderService orderService2 = new OrderService(new NewProvider()git ,new MailService());
+        OrderService orderService2 = new OrderService(new NewProvider() ,new MailService());
         orderService2.order(orderRequest);
         System.out.println();
         OrderService orderService3 = new OrderService(new GlutenFreeShop(),new MailService());
