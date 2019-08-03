@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.challenges;
 
 import java.time.LocalDateTime;
 
-public class Product implements OrderService {
+public class Product implements Supplier {
 
     private String product;
 
