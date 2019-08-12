@@ -10,11 +10,19 @@ public class FlightService {
 
         FlightsFunctionalities flightsFunctionalities = new FlightsFunctionalities();
         flightsFunctionalities.getFlightsFrom(flights, "GDAŃSK");
-        System.out.println();
+        Printer.print(flightsFunctionalities.getFlightsFrom());
+
         flightsFunctionalities.getFlightsTo(flights, "SZCZECIN");
-        System.out.println();
+        Printer.print(flightsFunctionalities.getFlightsTo());
+
         flightsFunctionalities.getFligthsToDestinationBy(flights, "GDAŃSK", "WARSZAWA", "POZNAŃ");
-    }
+        Printer.printPair(flightsFunctionalities.getFlightsToDestinationBy(),flights);
+
+        }
 
 
 }
+
+
+
+

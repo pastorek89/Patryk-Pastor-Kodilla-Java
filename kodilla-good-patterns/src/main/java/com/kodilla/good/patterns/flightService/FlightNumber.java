@@ -27,4 +27,10 @@ public class FlightNumber {
     public int hashCode() {
         return getFlightNumber();
     }
+
+    @Override
+    public String toString() {
+        return "Flight number " + flightNumber;
+    }
 }
+
