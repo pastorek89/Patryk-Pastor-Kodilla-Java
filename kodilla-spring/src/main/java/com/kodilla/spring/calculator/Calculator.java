@@ -6,10 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Calculator {
 
-    double a;
-    double b;
-
-    @Autowired
+   @Autowired
     private Display display;
 
     public double add(double a, double b) {
