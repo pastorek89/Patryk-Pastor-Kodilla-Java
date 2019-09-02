@@ -28,4 +28,13 @@ public final class Board {
     public TaskList getDoneList() {
         return doneList;
     }
+
+    @Override
+    public String toString() {
+        return "Board{" +
+                "toDoList=" + toDoList +
+                ", inProgressList=" + inProgressList +
+                ", doneList=" + doneList +
+                '}';
+    }
 }
