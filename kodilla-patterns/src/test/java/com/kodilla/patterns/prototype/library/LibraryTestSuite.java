@@ -14,6 +14,7 @@ public class LibraryTestSuite {
         Book book1 = new Book("Pan Tadeusz", "Adam Mickiewicz", LocalDate.of(1884, 1, 1));
         Book book2 = new Book("Nad Niemnem", "Eliza Orzeszkowa", LocalDate.of(1887, 3, 30));
         Book book3 = new Book("Hobbit", "Tolkien", LocalDate.of(1937, 9, 21));
+        Book book4 = new Book("Wyspa Skarbów","Stevenson", LocalDate.of(1789,8,4));
 
         library.getBooks().add(book1);
         library.getBooks().add(book2);
@@ -36,18 +37,25 @@ public class LibraryTestSuite {
         } catch (CloneNotSupportedException e) {
             System.out.println(e);
         }
+
         System.out.println(library);
         System.out.println(clonedLibrary);
         System.out.println(deepClonedLibrary);
 
         //When
+        library.getBooks().add(book4);
+
+        System.out.println("After adding book: ");
+        System.out.println(library);
+        System.out.println(clonedLibrary);
+        System.out.println(deepClonedLibrary);
+
         //Then
         Assert.assertEquals(library.getBooks(), clonedLibrary.getBooks());
-        Assert.assertEquals(library.getBooks(), deepClonedLibrary.getBooks());
-        Assert.assertEquals(3, library.getBooks().size());
-        Assert.assertEquals(3, clonedLibrary.getBooks().size());
+        Assert.assertNotEquals(clonedLibrary.getBooks(), deepClonedLibrary.getBooks());
+        Assert.assertEquals(4, library.getBooks().size());
+        Assert.assertEquals(4, clonedLibrary.getBooks().size());
         Assert.assertEquals(3, deepClonedLibrary.getBooks().size());
-
 
     }
 }
