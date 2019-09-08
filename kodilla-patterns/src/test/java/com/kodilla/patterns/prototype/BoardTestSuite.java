@@ -55,7 +55,6 @@ public class BoardTestSuite {
         System.out.println(board);
         System.out.println(clonedBoard);
         System.out.println(deepClonedBoard);
-
         //When
         board.getLists().remove(listToDo);
         //Then
