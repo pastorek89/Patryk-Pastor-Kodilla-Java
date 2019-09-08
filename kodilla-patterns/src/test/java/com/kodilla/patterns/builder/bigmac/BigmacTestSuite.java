@@ -11,7 +11,7 @@ public class BigmacTestSuite {
         Bigmac bigmac = new Bigmac.BigmacBuilder()
                 .bun(new Bun("plain"))
                 .sauce(new Sauce("barbecue"))
-                .ingredients(new Ingredients("bacon","onion","cucumber","cheese"))
+                .ingredients(new Ingredients(Toppings.CHEESE,Toppings.BACON,Toppings.CHILLI,Toppings.CHAMPIGNONS))
                 .build();
         System.out.println(bigmac);
 
