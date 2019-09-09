@@ -9,14 +9,14 @@ public class BigmacTestSuite {
     public void testNewBigmac() {
         //Given
         Bigmac bigmac = new Bigmac.BigmacBuilder()
-                .bun(new Bun("plain"))
-                .sauce(new Sauce("barbecue"))
-                .ingredients(new Ingredients(Toppings.CHEESE,Toppings.BACON,Toppings.CHILLI,Toppings.CHAMPIGNONS))
+                .bun(BunType.PLAIN)
+                .sauce(SauceType.STANDARD)
+                .ingredients(Toppings.CHAMPIGNONS,Toppings.CHILLI,Toppings.BACON,Toppings.LETTUCE)
                 .build();
         System.out.println(bigmac);
 
         //When
-        int howManyIngredients = bigmac.getIngredients().ingredients.size();
+        int howManyIngredients = bigmac.getIngredients().size();
 
         //Then
         Assert.assertEquals(4,howManyIngredients);

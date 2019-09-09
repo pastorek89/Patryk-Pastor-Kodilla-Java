@@ -1,28 +1,33 @@
 package com.kodilla.patterns.builder.bigmac;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public final class Bigmac {
 
-    private final Bun bun;
-    private final Sauce sauce;
-    private final Ingredients ingredients;
+    private final String bun;
+    private final String sauce;
+    private final List<String> ingredients;
 
     public static class BigmacBuilder {
-        private Bun bun;
-        private Sauce sauce;
-        private Ingredients ingredients;
+        private String bun;
+        private String sauce;
+        private List<String> ingredients = new ArrayList<>();
 
-        public BigmacBuilder bun(Bun bun) {
-            this.bun = bun;
+        public BigmacBuilder bun(BunType bun) {
+            this.bun = bun.toString();
             return this;
         }
 
-        public BigmacBuilder sauce(Sauce sauce) {
-            this.sauce = sauce;
+        public BigmacBuilder sauce(SauceType sauce) {
+            this.sauce = sauce.toString();
             return this;
         }
 
-        public BigmacBuilder ingredients(Ingredients ingredients) {
-            this.ingredients = ingredients;
+        public BigmacBuilder ingredients(Toppings... toppings) {
+            for (Toppings ingredient : toppings) {
+                ingredients.add(ingredient.toString());
+            }
             return this;
         }
 
@@ -31,30 +36,30 @@ public final class Bigmac {
         }
     }
 
-    private Bigmac(Bun bun, Sauce sauce, Ingredients ingredients) {
+    private Bigmac(String bun, String sauce, List<String> ingredients) {
         this.bun = bun;
         this.sauce = sauce;
         this.ingredients = ingredients;
     }
 
-    public Bun getBun() {
+    public String getBun() {
         return bun;
     }
 
-    public Sauce getSauce() {
+    public String getSauce() {
         return sauce;
     }
 
-    public Ingredients getIngredients() {
+    public List<String> getIngredients() {
         return ingredients;
     }
 
     @Override
     public String toString() {
         return "Bigmac{" +
-                "bun =" + bun +
-                ", sauce =" + sauce +
-                ", ingredients =" + ingredients +
+                "bun = " + bun +
+                ", sauce = " + sauce +
+                ", ingredients = " + ingredients +
                 '}';
     }
 }
