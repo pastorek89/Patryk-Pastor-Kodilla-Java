@@ -11,15 +11,15 @@ public class DbManager {
 
     private DbManager() throws SQLException {
         Properties connectionProps = new Properties();
-        connectionProps.put("user","kodilla_user");
-        connectionProps.put("password","Pieselta260791!");
+        connectionProps.put("user", "kodilla_user");
+        connectionProps.put("password", "Pieselta260791!");
         conn = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/kodilla_course?serverTimezone=Europe/Warsaw" +
-                        "&useSSL=False",connectionProps);
+                        "&useSSL=False", connectionProps);
     }
 
     public static DbManager getInstance() throws SQLException {
-        if(dbManagerInstance == null) {
+        if (dbManagerInstance == null) {
             dbManagerInstance = new DbManager();
         }
         return dbManagerInstance;
