@@ -9,12 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CompanyDaoTestSuite {
 
     @Autowired
     CompanyDao companyDao;
+
+    @Autowired
+    EmployeeDao employeeDao;
 
     @Test
     public void testSaveManyToMany() {
@@ -59,8 +64,74 @@ public class CompanyDaoTestSuite {
             companyDao.deleteById(dataMaestersId);
             companyDao.deleteById(greyMatterId);
         } catch (Exception e) {
-        //do nothing
+            //do nothing
+        }
+
+    }
+
+    @Test
+    public void testFindEmployeeByName() {
+
+        //Given
+        Employee patrykPastor = new Employee("Patryk", "Pastor");
+        Employee andrzejMatusiak = new Employee("Andrzej", "Matusiak");
+        Employee karolinaBorek = new Employee("Karolina", "Borek");
+
+        employeeDao.save(patrykPastor);
+        int patrykPastorId = patrykPastor.getId();
+        employeeDao.save(andrzejMatusiak);
+        int andrzejMatusiakId = andrzejMatusiak.getId();
+        employeeDao.save(karolinaBorek);
+        int karolinaBorekId = karolinaBorek.getId();
+
+        //When
+        List<Employee> employeesListWithFollowingLastname = employeeDao.findEmployeeByName("Matusiak");
+
+        //Then
+        Assert.assertEquals(1, employeesListWithFollowingLastname.size());
+
+        //CleanUp
+        try {
+            employeeDao.deleteById(patrykPastorId);
+            employeeDao.deleteById(andrzejMatusiakId);
+            employeeDao.deleteById(karolinaBorekId);
+
+        } catch (Exception e) {
+            //do nothing
+        }
+    }
+
+    @Test
+    public void testFindCompanyByFirstThreeCharacters() {
+
+        //Given
+        Company tietoCorp = new Company("Tieto Corporation");
+        Company asseco = new Company("Asseco");
+        Company tiestoCorp = new Company("Tiesto Corporation");
+
+        companyDao.save(tietoCorp);
+        int tietoCorpId = tietoCorp.getId();
+        companyDao.save(tiestoCorp);
+        int tiestoCorpId = tiestoCorp.getId();
+        companyDao.save(asseco);
+        int assecoId = asseco.getId();
+
+        //When
+        List<Company> companiesWithThreeFirstChars = companyDao.findCompanyByFirstThreeCharacters("Tie");
+
+        //Then
+        Assert.assertEquals(2,companiesWithThreeFirstChars.size());
+
+        //Clean up
+        try {
+            companyDao.deleteById(tietoCorpId);
+            companyDao.deleteById(tiestoCorpId);
+            companyDao.deleteById(assecoId);
+
+        } catch (Exception e) {
+            //do nothing
         }
 
     }
 }
+
