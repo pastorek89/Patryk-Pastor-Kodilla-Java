@@ -9,13 +9,13 @@ public class FlightService {
         Map<FlightNumber, Flight> flights = flightsDataRetriever.retrieve();
 
         FlightsFunctionalities flightsFunctionalities = new FlightsFunctionalities();
-        flightsFunctionalities.getFlightsFrom(flights, "GDAŃSK");
+        flightsFunctionalities.getFlightsFrom(flights, "GDANSK");
         Printer.print(flightsFunctionalities.getFlightsFrom());
 
         flightsFunctionalities.getFlightsTo(flights, "SZCZECIN");
         Printer.print(flightsFunctionalities.getFlightsTo());
 
-        flightsFunctionalities.getFligthsToDestinationBy(flights, "GDAŃSK", "WARSZAWA", "POZNAŃ");
+        flightsFunctionalities.getFligthsToDestinationBy(flights, "GDANSK", "WARSZAWA", "POZNAN");
         Printer.printPair(flightsFunctionalities.getFlightsToDestinationBy(),flights);
 
         }

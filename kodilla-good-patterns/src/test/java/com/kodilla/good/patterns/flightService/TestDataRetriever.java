@@ -12,22 +12,22 @@ public class TestDataRetriever {
     public Map<FlightNumber,Flight> flightsRetrieve() {
         Map<FlightNumber,Flight> flights = new HashMap<>();
         flights.put(new FlightNumber(1),new Flight("WARSZAWA", "SZCZECIN"));
-        flights.put(new FlightNumber(2),new Flight("POZNAŃ", "KRAKÓW"));
-        flights.put(new FlightNumber(3),new Flight("KRAKÓW", "WROCŁAW"));
-        flights.put(new FlightNumber(4),new Flight("SZCZECIN", "ŁÓDŹ"));
+        flights.put(new FlightNumber(2),new Flight("POZNAN", "KRAKOW"));
+        flights.put(new FlightNumber(3),new Flight("KRAKOW", "WROCLAW"));
+        flights.put(new FlightNumber(4),new Flight("SZCZECIN", "LODZ"));
 
         return flights;
     }
 
     public List<Flight> flightsFrom() {
         List<Flight> flightsFrom = new ArrayList<>();
-        flightsFrom.add(0,new Flight("SZCZECIN","ŁÓDŹ"));
+        flightsFrom.add(0,new Flight("SZCZECIN","LODZ"));
         return flightsFrom;
     }
 
     public List<Flight> flightsTo() {
         List<Flight> flightsTo = new ArrayList<>();
-        flightsTo.add(0,new Flight("POZNAŃ","KRAKÓW"));
+        flightsTo.add(0,new Flight("POZNAN","KRAKOW"));
         return flightsTo;
     }
 

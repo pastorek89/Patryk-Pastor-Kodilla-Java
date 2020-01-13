@@ -29,7 +29,7 @@ public class FlightsFunctionalitiesTestSuite {
         Map<FlightNumber,Flight> flights = testDataRetriever.flightsRetrieve();
         FlightsFunctionalities flightsFunctionalities = new FlightsFunctionalities();
         //When
-        List<Flight> result = flightsFunctionalities.getFlightsTo(flights,"KRAKÓW");
+        List<Flight> result = flightsFunctionalities.getFlightsTo(flights,"KRAKOW");
         //Then
         Assert.assertEquals(testDataRetriever.flightsTo(),result);
     }
@@ -42,7 +42,7 @@ public class FlightsFunctionalitiesTestSuite {
         FlightsFunctionalities flightsFunctionalities = new FlightsFunctionalities();
         //When
         List<Pair<FlightNumber,FlightNumber>> result = flightsFunctionalities.getFligthsToDestinationBy
-                                        (flights,"POZNAŃ","WROCŁAW","KRAKÓW");
+                                        (flights,"POZNAN","WROCLAW","KRAKOW");
         //Then
         Assert.assertEquals(testDataRetriever.flightsBy(),result);
     }
