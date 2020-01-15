@@ -8,9 +8,9 @@ public class MentorTestSuite {
     @Test
     public void testUpdate() {
         //Given
-        StudentTasks patrykPastor = new Student("Patryk Pastor");
-        StudentTasks maciejZawada = new Student("Maciej Zawada");
-        StudentTasks elzaPastor = new Student("Elza Pastor");
+        StudentTasks patrykPastor = new StudentTasks("Patryk Pastor");
+        StudentTasks maciejZawada = new StudentTasks("Maciej Zawada");
+        StudentTasks elzaPastor = new StudentTasks("Elza Pastor");
         Mentor michalLangner = new Mentor("Michał Langner");
         Mentor pawelPluta = new Mentor("Paweł Pluta");
         patrykPastor.registerFollower(michalLangner);
