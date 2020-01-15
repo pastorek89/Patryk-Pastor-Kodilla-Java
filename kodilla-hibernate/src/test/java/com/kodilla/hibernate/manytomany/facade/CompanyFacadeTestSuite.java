@@ -26,7 +26,7 @@ public class CompanyFacadeTestSuite {
     private CompanyFacade companyFacade;
 
     @Test
-    public void testFindEmployees() throws CompaniesWorkOrganisationException {
+    public void testFindEmployees() {
         //Given
         Employee elzaZBajki = new Employee("Elza", "ZBajki");
         Employee patryk = new Employee("Patryk", "Pastoruch");
@@ -56,7 +56,7 @@ public class CompanyFacadeTestSuite {
     }
 
     @Test
-    public void testFindCompanies() throws CompaniesWorkOrganisationException {
+    public void testFindCompanies() {
         //Given
         Company softwareMachine = new Company("Software Machine");
         Company dataMachsters = new Company("Data Machsters");

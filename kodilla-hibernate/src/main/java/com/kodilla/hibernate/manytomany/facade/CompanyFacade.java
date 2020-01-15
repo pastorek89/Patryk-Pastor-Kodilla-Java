@@ -19,27 +19,25 @@ public class CompanyFacade {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CompanyFacade.class);
 
-    public List<Employee> findEmployees(String lastname) throws CompaniesWorkOrganisationException {
+    public List<Employee> findEmployees(String lastname){
         LOGGER.info("Searching employee...");
         List<Employee> employees = employeeDao.findEmployeeByAnyCharacter(lastname);
         if(employees.size() == 0) {
-            LOGGER.error(CompaniesWorkOrganisationException.ERR_EMPLOYEE_NOT_FOUND);
-            throw new CompaniesWorkOrganisationException(CompaniesWorkOrganisationException.ERR_EMPLOYEE_NOT_FOUND);
+            LOGGER.info("Employee not found");
         } else {
             LOGGER.info("Done!");
-            return employees;
         }
+        return employees;
     }
 
-    public List<Company> findCompanies(String companyName) throws CompaniesWorkOrganisationException {
+    public List<Company> findCompanies(String companyName) {
         LOGGER.info("Searching companies...");
         List<Company> companies = companyDao.findCompanyByAnyCharacters(companyName);
         if(companies.size() == 0) {
-            LOGGER.error(CompaniesWorkOrganisationException.ERR_COMPANY_NOT_FOUND);
-            throw new CompaniesWorkOrganisationException(CompaniesWorkOrganisationException.ERR_COMPANY_NOT_FOUND);
+            LOGGER.info("Company not found");
         } else {
             LOGGER.info("Done!");
-            return companies;
         }
+        return companies;
     }
 }
