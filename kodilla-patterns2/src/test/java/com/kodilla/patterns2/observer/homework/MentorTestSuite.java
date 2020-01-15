@@ -8,9 +8,9 @@ public class MentorTestSuite {
     @Test
     public void testUpdate() {
         //Given
-        StudentTasks patrykPastor = new PatrykPastor();
-        StudentTasks maciejZawada = new MaciejZawada();
-        StudentTasks elzaPastor = new ElzaPastor();
+        StudentTasks patrykPastor = new Student("Patryk Pastor");
+        StudentTasks maciejZawada = new Student("Maciej Zawada");
+        StudentTasks elzaPastor = new Student("Elza Pastor");
         Mentor michalLangner = new Mentor("Michał Langner");
         Mentor pawelPluta = new Mentor("Paweł Pluta");
         patrykPastor.registerFollower(michalLangner);
@@ -27,7 +27,5 @@ public class MentorTestSuite {
         //Then
         Assert.assertEquals(5, michalLangner.getUpdateTasksCount());
         Assert.assertEquals(4, pawelPluta.getUpdateTasksCount());
-
-
     }
 }
